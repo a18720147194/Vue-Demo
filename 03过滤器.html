@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/jquery-3.3.1.js" type="text/javascript" charset="utf-8"></script>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				new Vue({
+					el:"#box",
+					data:{
+						name:"abcdefg",
+						num:0.3
+					},
+					filters:{
+						up:function(asd){
+							return asd.toUpperCase();
+						},
+						ce:function(asd){
+							return asd*100+'%';
+						},
+					}
+				})
+			});
+		</script>
+	</head>
+	<body>
+		<div id="box">
+			<p>{{name}}</p>
+			<p>{{name | up}}</p>
+			<p>{{num}}</p>
+			<p>{{num | ce}}</p>
+		</div>
+	</body>
+</html>

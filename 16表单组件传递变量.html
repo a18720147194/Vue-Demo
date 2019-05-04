@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/jquery-3.3.1.js" type="text/javascript" charset="utf-8"></script>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				
+				Vue.component("sb",{
+					props:["scor"],
+					template:'<p>你好{{scor}}</p>',
+					
+				}); 
+				new Vue({
+					el:"#box", 
+					data:{
+						name:""
+					}
+				})
+			});
+		</script>
+	</head>
+	
+	<body>
+		<div id="box">
+			<input v-model="name" />
+			<sb :scor="name"></sb>
+		</div>
+	</body>
+</html>

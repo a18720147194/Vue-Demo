@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/jquery-3.3.1.js" type="text/javascript" charset="utf-8"></script>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				
+				Vue.component("info-ss",{
+					props:["a","b"],
+					template:"<button v-on:click='addb'>add</button>",
+					methods:{
+						addb:function(){
+							var value = 0;
+							value = this.a+this.b;
+							this.$emit("clac",{
+								scor:value
+							});
+						}
+					}
+				});
+				new Vue({
+					el:"#box",
+					data:{
+						scor:0
+					},
+					methods:{
+						adda:function(vval){
+							this.scor=vval.scor;
+						}
+					}
+				});
+			});
+		</script>
+	</head>
+	  
+	<body>
+		<div id="box">
+			<info-ss :a="1" :b="23" v-on:clac='adda'></info-ss>
+			<p>{{scor}}</p>
+		</div>
+		
+	</body>
+</html>

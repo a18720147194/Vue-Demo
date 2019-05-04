@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/jquery-3.3.1.js" type="text/javascript" charset="utf-8"></script>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
+		<script type="text/javascript">
+			$(function(){ 
+				new Vue({
+					el:"#box",
+					data:{
+						isco:true,
+						co:{
+							blue:true
+						}
+					},
+					methods:{
+						btn:function(){
+							this.isco = !this.isco ,
+							this.co.blue =!this.co.blue
+						}
+					}
+				})
+			});
+		</script>
+		<style type="text/css">
+			.red{
+				color: red;
+			}
+			.blue{
+				color: blue;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<p v-bind:class="{red:isco}">段落1111111</p>
+			<p v-bind:class="{red:isco}">段落2222222</p>
+			<p :class="{red:isco}">段落3333333</p>
+			<p v-bind:class="co">段落4444444</p>
+			<button v-on:click="btn()">变色</button>
+		</div>
+	</body>
+</html>

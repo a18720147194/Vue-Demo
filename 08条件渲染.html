@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/jquery-3.3.1.js" type="text/javascript" charset="utf-8"></script>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
+		<script type="text/javascript">
+			$(function(){ 
+				new Vue({
+					el:"#box",
+					data:{
+						res:0
+					},
+					methods:{
+						btn:function(){
+							this.res=Math.round(Math.random()*100);
+						}
+					}
+				})
+			});
+		</script>
+	</head>
+	<body>
+		<div id="box">
+			<p v-if="res==0">成绩未公布</p>
+			<p v-else-if="res<60">不及格</p>
+			<p v-else-if="res<80">{{res}}继续努力</p>
+			<p v-else>{{res}}牛皮 </p> 
+			<button @click="btn">随机</button>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/jquery-3.3.1.js" type="text/javascript" charset="utf-8"></script>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				
+				Vue.component("info-ss",{
+					props:{
+						name:{
+							type:String,
+							required:true
+						},
+						age:{
+							type:Number,
+							validator:function(value){
+								return value >=0 && value<=120;
+							}
+						},
+						detali:{
+							type:Object,
+							default:function(){
+								return {
+									address:"",
+									language:""
+								};
+							}
+						},
+					},
+					template:"<p>{{this.name}},{{this.age}},{{this.detali.address}},{{this.detali.language}}</p>"
+				});
+				new Vue({
+					el:"#box",
+					data:{}
+				});
+			});
+		</script>
+	</head>
+	  
+	<body>
+		<div id="box">
+			<info-ss name='atm' :age="22222" :detali={address:"cn",language:"cnes"}></info-ss>
+		</div>
+		
+	</body>
+</html>

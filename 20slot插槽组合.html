@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/jquery-3.3.1.js" type="text/javascript" charset="utf-8"></script>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				Vue.component("say-b",{
+					props:["name"],
+					template:"<p>{{name}}:<slot name='a1'></slot><slot name='a2'></slot></p>",
+				});
+				new Vue({
+					el:"#box",
+				})
+			})
+		</script>
+	</head>
+	<body>
+		<div id="box">
+			<say-b name='aaa'>
+				<span slot="a1">1111</span>
+				<span slot="a2">2222</span>
+				<span slot="a3">3333</span>
+			</say-b>
+		</div>
+	</body>
+</html>

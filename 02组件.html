@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/jquery-3.3.1.js" type="text/javascript" charset="utf-8"></script>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				//组件定义
+				Vue.component("drama",{
+					props:["dra"],
+					template:"<li>{{dra.title}}</li>"
+				});
+				new Vue({
+					el:"#box",
+					data:{
+						arr:[{title:'缘之空'},{title:'天体战士'},{title:'刀剑神域'}]
+					}
+				})
+			});
+		</script>
+	</head>
+	<body>
+		<div id="box">
+			<ol>
+				<drama v-for="item in arr" v-bind:dra="item" ></drama>
+				
+			</ol>
+		</div>
+	</body>
+</html>

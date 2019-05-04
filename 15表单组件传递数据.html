@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/jquery-3.3.1.js" type="text/javascript" charset="utf-8"></script>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				
+				Vue.component("sb",{
+					props:["scor"],
+					template:'<p>{{scor}},{{ssoo}}</p>',
+					computed:{
+						ssoo:function(){
+							if(this.scor<100){
+								return this.scor*2
+							}
+							else if(this.scor>100){
+								return this.scor
+							}
+							else{
+								return 0
+							}
+						}
+					}
+				}); 
+				new Vue({
+					el:"#box",
+					data:{
+					}
+				})
+			});
+		</script>
+	</head>
+	
+	<body>
+		<div id="box">
+			<sb :scor="99"></sb>
+		</div>
+	</body>
+</html>

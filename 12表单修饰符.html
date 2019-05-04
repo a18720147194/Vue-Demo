@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/jquery-3.3.1.js" type="text/javascript" charset="utf-8"></script>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
+		<script type="text/javascript">
+			$(function(){ 
+				new Vue({
+					el:"#box",
+					data:{
+						m1:"",
+						m2:"",
+						m3:""
+					}
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<div id="box">
+			<input v-model.lazy="m1"/>
+			<p>1.{{m1}}</p> 
+			<input v-model.number.lazy="m2"/>
+			<p>2.{{m2}}</p> 
+			<input v-model.trim="m3"/>
+			<p>3.{{m3}}</p> 
+		</div>
+	</body>
+</html>

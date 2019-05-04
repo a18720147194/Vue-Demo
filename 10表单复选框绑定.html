@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/jquery-3.3.1.js" type="text/javascript" charset="utf-8"></script>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
+		<script type="text/javascript">
+			$(function(){ 
+				new Vue({
+					el:"#box",
+					data:{
+						cb:[],
+						cv:""
+					},
+					
+				})
+			});
+		</script>
+	</head>
+	<body>
+		<div id="box">
+			<input type="checkbox" value="111" v-model="cb"/>111
+			<input type="checkbox" value="222" v-model="cb"/>222
+			<input type="checkbox" value="333" v-model="cb"/>333
+			<input type="checkbox" value="444" v-model="cb"/>444
+			<p>{{cb}}</p>
+			<input type="radio" id="man" value="男" v-model="cv"/>
+			<label for="man">男</label>
+			<input type="radio" id="woman" value="女" v-model="cv"/>女
+			<label for="woman">女</label>
+			<p>性别{{cv}}</p>
+		</div>
+	</body>
+</html>

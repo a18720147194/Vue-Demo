@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/jquery-3.3.1.js" type="text/javascript" charset="utf-8"></script>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
+		<script type="text/javascript">
+			$(function(){ 
+				new Vue({
+					el:"#box",
+					data:{
+						
+					},
+					methods:{
+						ku:function(event){
+							console.log(event.srcElement.tagName); 
+							console.log(event.srcElement.id); 
+							console.log(event.srcElement.innerHTML); 
+							console.log(event.key?event.key:"none"); 
+						} 
+					}
+				})
+			});
+		</script>
+	</head>
+	<body>
+		<div id="box">
+			<input id="in" v-on:keyup="ku($event)" />
+		</div>
+	</body>
+</html>

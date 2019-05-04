@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/jquery-3.3.1.js" type="text/javascript" charset="utf-8"></script>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				Vue.component("say-b",{
+					props:["name"],
+					template:"<p>{{name}}:<slot></slot></p>",
+				});
+				new Vue({
+					el:"#box",
+
+				})
+			})
+		</script>
+	</head>
+	<body>
+		<div id="box">
+			<say-b name='aaa'>第1行</say-b>
+			<say-b name='bbb'>第2行</say-b>
+			<say-b name='ccc'>第3行</say-b>
+		</div>
+	</body>
+</html>

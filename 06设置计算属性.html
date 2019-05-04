@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/jquery-3.3.1.js" type="text/javascript" charset="utf-8"></script>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
+		<script type="text/javascript">
+			$(function(){ 
+				new Vue({
+					el:"#box",
+					data:{
+						name:100,
+					},
+					computed:{
+						up:{
+							get:function(){
+								return this.name*1.08;
+							},
+							set:function(vl){
+								this.name = vl / 1.08;
+							} 
+						}, 
+						upp:function(){
+							return this.up*15;
+						},
+					},
+					methods:{
+						btn:function(pv){
+							this.up=pv;
+						}
+					}
+				})
+			});
+		</script>
+	</head>
+	<body>
+		<div id="box">
+			<p>一本书的价格是{{name}}元，含税价是{{up}}元，折合日元{{upp}}</p>
+			<button v-on:click="btn(1080)">更改加税价格为1080元</button>
+		</div>
+	</body>
+</html>

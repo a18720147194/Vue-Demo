@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/jquery-3.3.1.js" type="text/javascript" charset="utf-8"></script>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
+		<script type="text/javascript">
+			$(function(){ 
+				new Vue({
+					el:"#box",
+					data:{
+						vmmm:[],
+						vmm:"啊啊啊啊"
+					}
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<div id="box">
+			<select v-model="vmmm" multiple="">
+				<option>1111</option>
+				<option>2222</option>
+				<option>3333</option>
+				<option>4444</option>
+				<option>5555</option>
+			</select>
+			<p>选中了：{{vmmm}}</p> 
+		</div>
+	</body>
+</html>
